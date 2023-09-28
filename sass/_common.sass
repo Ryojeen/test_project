@@ -1,0 +1,361 @@
+*
+	font-family: 'lexend'
+	margin: 0
+	padding: 0
+body
+	background: $navyBlue
+.mobile_menu
+	display: flex
+	position: fixed
+	top: 0
+	left: -100%
+	height: 100%
+	width: 50%
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	background-color: $navyBlue
+	transition: all 1s linear
+	z-index: 1
+	&_active
+		left: 0
+	.mobile_list
+		list-style: none
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		li
+			width: 90%
+			height: 50px
+			border: solid 2px $blue
+			border-radius: 50px
+			display: flex
+			justify-content: center
+			align-items: center
+			margin: 5px 0 
+		.link
+			text-decoration: none
+			font-size: 16px
+			color: $white
+			&:hover
+				color: $blue
+				text-decoration: underline
+	.mobile_buttons
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		gap: 14px
+		width: 100%
+		margin-top: 30px
+		.button
+			@include button(48px,14px,24px, $navyBlue)
+			width: 90%
+			.link
+				text-decoration: none
+				color: $white
+				width: 90%
+			&:hover
+				background-color: $blue
+.container
+	max-width: 1640px
+	min-width: 1400px
+	margin: 0 auto
+	box-sizing: border-box
+header
+	box-sizing: border-box
+	height: 96px
+	border-radius: 48px
+	border: 4px solid $blue
+	padding: 24px 48px
+	margin-top: 16px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	z-index: 2
+	background-color: $navyBlue
+	.hamburger
+		display: none
+	.logo
+		width: 294.4px
+		height: 32px
+		background: url('../img/logo/logo.png'), 50% / cover no-repeat
+		flex-shrink: 0
+	.menu
+		&__list
+			list-style: none
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 0 20px
+			:nth-child(n)
+				margin-right: 32px
+			:last-child
+				margin-right: 0
+		&__link
+			text-decoration: none
+			font-size: 16px
+			color: $white
+			&:hover
+				color: $blue
+				text-decoration: underline
+	.buttons
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		gap: 14px
+		.button
+			@include button(48px,14px,24px, $navyBlue)
+			.link
+				text-decoration: none
+				color: $white
+			&:hover
+				background-color: $blue
+		&__language
+			display: flex
+			justify-content: space-around
+			align-items: center
+			&::before
+				content:''
+				display: inline-block
+				width: 16px
+				height: 16px
+				margin-right: 8px
+				background: url('../img/icons/Planet.svg')center center / cover no-repeat
+		&__login
+			display: flex
+			justify-content: center
+			align-items: center
+		&__signup
+			display: flex
+			justify-content: center
+			align-items: center
+
+.main
+	display: flex
+	justify-content: space-between
+	&__banner
+		flex: 1 1 500px
+		display: flex
+		flex-direction: column
+	&__promo
+		font-size: 96px
+		display: flex
+		flex-direction: column
+		margin-bottom: 0
+		margin-top: 296px
+		&_house
+			color: $white
+		&_gambling
+			color: $blue
+	&__raise
+		font-family: Lexend
+		font-size: 30px
+		color: $transparentWhite
+		margin-top: 24px
+	&__button
+		@include button(72px, 20px 72px, 36px, $blue)
+		display: flex
+		justify-content: center
+		align-items: center
+		align-self: flex-start
+		width: 393px
+		margin-top: 48px
+		font-size: 24px
+		font-weight: 600
+		text-transform: uppercase
+	&__move
+		flex: 1 1 500px
+		height: 1026px
+		display: flex
+		justify-content: center
+		.add
+			display: none
+		.col1
+			overflow: hidden
+			margin-right: 5px
+			.box
+				animation: move 10s linear infinite reverse
+			span
+				display: block
+				margin: 20px
+				@include item(100px, 100px)
+			.ball
+				background: url('../img/icons/rounds/left/Soccer.svg') center center/cover no-repeat
+			.M
+				background: url('../img/icons/rounds/left/M.svg') center center/cover no-repeat
+			.shield
+				background: url('../img/icons/rounds/left/Shield.svg') center center/cover no-repeat
+			.dollar
+				@include item(100px, 220px)
+				background: url('../img/icons/rounds/left/$.svg') center center/cover no-repeat
+		.col2
+			overflow: hidden
+			margin-right: 5px
+			.box
+				animation: move 10s linear infinite
+			span
+				display: block
+				margin: 20px
+				@include item(100px, 100px)
+			.crown
+				background: url('../img/icons/rounds/center/Crown.svg') center center/cover no-repeat
+			.M
+				background: url('../img/icons/rounds/center/M.svg') center center/cover no-repeat
+			.timer
+				background: url('../img/icons/rounds/center/Timer.svg') center center/cover no-repeat
+			.world
+				@include item(100px, 220px)
+				background: url('../img/icons/rounds/center/World.svg') center center/cover no-repeat
+		.col3
+			overflow: hidden
+			margin-right: 5px
+			.box
+				animation: move 10s linear infinite reverse
+			span
+				display: block
+				margin: 20px
+				@include item(100px, 100px)
+			.dollar
+				@include item(100px, 220px)
+				background: url('../img/icons/rounds/right/$.svg') center center/cover no-repeat
+			.M
+				background: url('../img/icons/rounds/right/M.svg') center center/cover no-repeat
+			.shield
+				background: url('../img/icons/rounds/right/Shield.svg') center center/cover no-repeat
+			.soccer
+				background: url('../img/icons/rounds/right/Soccer.svg') center center/cover no-repeat
+	&__blog
+		flex: 1 1 500px
+		align-items: center
+		width: 90%
+		margin-left: 50px
+		.title
+			color: $white
+			font-size: 40px
+			font-weight: 600
+			margin-top: 162px
+			text-align: center
+	&__window
+		height: 632px
+		margin-top: 24px
+		align-self: stretch
+		border-radius: 100px
+		border: 3px solid $blue
+		background:  $transparentGray
+		padding: 24px 16px
+		overflow-y: hidden
+		display: flex
+		justify-content: center
+		.box
+			height: 100%
+			overflow-y: auto
+			border-radius: 80px
+			:last-child
+				.article
+					margin-bottom: 0
+			.link
+				text-decoration: none
+			.article
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: flex-start
+				align-self: stretch
+				width: 100%
+				height: 146px
+				padding: 16px 64px
+				box-sizing: border-box
+				border-radius: 196px
+				background: $deepBlue
+				color: $white
+				font-size: 24px
+				font-weight: 400
+				margin-bottom: 16px
+				overflow: hidden
+				&:hover
+					background-color: $blue
+				time
+					font-family: 'Futura'
+					color: $transparentWhite
+					font-feature-settings: 'liga' off
+					font-size: 14px
+					font-weight: 400
+					margin-top: 12px
+			&::-webkit-scrollbar
+				width: 4px
+				background-color: $transparentWhite
+				border-radius: 4px
+			&::-webkit-scrollbar-track-piece
+				color: $mint
+			&::-webkit-scrollbar
+				width: 4px
+				background-color: $transparentWhite
+				border-radius: 4px
+			&::-webkit-scrollbar-thumb
+				background-color: $blue
+				border-radius: 4px
+				height: 20px
+				&:hover
+					background-color: #2777f8
+
+.footer
+	display: flex
+	max-width: 100vw
+	min-width: 1400px
+	padding: 40px 0 24px 0
+	border-radius: 64px 64px 0px 0px
+	border-top: 4px solid $blue
+	border-right: 4px solid $blue
+	border-left: 4px solid $blue
+	box-sizing: border-box
+	.wrapper
+		display: flex
+		justify-content: space-between
+		width: 100%
+		align-items: flex-end
+	&__list
+		list-style: none
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap:40px
+		margin-left: 10px
+	&__link
+		text-decoration: none
+		font-size: 16px
+		color: $white
+		&:hover
+			color: $blue
+			text-decoration: underline
+	.media
+		margin-right: 10px
+		&__title
+			color: $white
+			text-align: right
+			font-size: 16px
+			font-weight: 400
+			margin-bottom: 14px
+		&__list
+			list-style: none
+			display: flex
+			justify-content: space-between
+			align-items: center
+			gap:8px
+		&__link
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 32px
+			height: 32px
+			background: url('../img/icons/social/bg.svg') center center/cover no-repeat
+			&:hover
+				background: url('../img/icons/social/bg_red.svg') center center/cover no-repeat
+			img
+				width: 16px
+				height: 16px
+				color: #d71414
+				
