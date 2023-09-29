@@ -65,6 +65,7 @@ body
 	min-width: 1400px
 	margin: 0 auto
 	box-sizing: border-box
+	overflow-y: hidden
 header
 	box-sizing: border-box
 	height: 96px
@@ -137,10 +138,22 @@ header
 .main
 	display: flex
 	justify-content: space-between
+	overflow: hidden 
 	&__banner
-		flex: 1 1 500px
 		display: flex
 		flex-direction: column
+		position: relative
+	&__bg
+		position: absolute
+		top:-15%
+		left: -5% 
+		width: 226.458px
+		height: 1302.469px
+		transform: rotate(-54.311deg)
+		flex-shrink: 0
+		background-image: linear-gradient(180deg, #478BF9 0%, rgba(71, 139, 249, 0.40) 100%)
+		opacity: 0.55
+		filter: blur(150px)
 	&__promo
 		font-size: 96px
 		display: flex
@@ -229,7 +242,7 @@ header
 			.soccer
 				background: url('../img/icons/rounds/right/Soccer.svg') center center/cover no-repeat
 	&__blog
-		flex: 1 1 500px
+		position: relative
 		align-items: center
 		width: 90%
 		margin-left: 50px
@@ -301,7 +314,16 @@ header
 				height: 20px
 				&:hover
 					background-color: #2777f8
-
+	&__bg2
+		position: absolute
+		right: 0
+		bottom: 0
+		width: 574px
+		height: 574px
+		flex-shrink: 0
+		background-image: radial-gradient(#478BF9 0%, $navyBlue 100%)
+		opacity: 0.55
+		filter: blur(150px)
 .footer
 	display: flex
 	max-width: 100vw
